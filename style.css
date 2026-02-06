@@ -123,39 +123,12 @@ body::before{
         transform: scale(1);
     }
 }
-@media (max-width: 600px) {
-    /* Make the whole card take up more width */
-    .main-container {
-        padding: 10px;
-        gap: 5px; /* Bring things tighter if they feel 'far away' */
-    }
 
-    .music-player {
-        width: 95%; /* Almost full width of the phone */
-        padding: 40px 20px; /* More vertical room */
-    }
-
-    /* Make the cats bigger */
-    .cat-img, .album-art-container {
-        width: 250px !important; 
-        height: 250px !important;
-    }
-
-    /* Make the buttons huge so they are easy to tap */
-    .yes-btn, .no-btn, .play-button {
+.yes-btn, .no-btn {
         padding: 20px 40px !important;
         font-size: 22px !important;
         border-radius: 15px;
     }
 
-    /* Scale up the text */
-    h1, .song-title {
-        font-size: 28px !important;
-    }
-
-    .letter-text {
-        font-size: 18px !important;
-    }
-}
 
 
