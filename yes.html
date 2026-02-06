@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Thankyou Baby🤗</title>
+<style>
+    body{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 50px;
+        grid-area: 30px;
+        background-size: cover;
+        background-repeat: repeat,no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background-image: url(images\ \(12\).jpeg);
+    }
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+    }
+    .cat-img{
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border: 8px solid white;
+        border-radius: 50%;
+        border: 5px solid white;
+        box-shadow: 0 10 px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.5s ease;
+    }
+    
+    
+    .celebration-text{
+        color: white;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    h2{
+        color: palevioletred;
+        margin-top: 5px;
+        font-size: xx-large;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        animation: heartbeat 1.5s infinite;
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+}
+@keyframes heartbeat{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+:root{
+    --primary:#ff4d6d;
+    --bg-color:#ffb3c1;
+}
+.envelope-wrapper{
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#open-check{
+    position: absolute;
+    opacity: 0;
+}
+.envelope{
+    position: relative;
+    width: 280px;
+    height: 180px;
+    background: #f07f7f;
+    display: block;
+    cursor: pointer;
+}
+.flap{
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-top: 100px solid #f77b7b;
+    z-index: 3;
+    transform-origin: top;
+    transition: transform 0.4s ease;
+}
+.body{
+    position: absolute;
+    bottom: 0;
+    width: 280px;
+    height: 180px;
+    background: #ffffff;
+    z-index: 2;
+}
+.letter{
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    width: 260px;
+    height: 170px;
+    background: rgba(65, 245, 236, 0.877);
+    z-index: 1;
+    transition: transform 0.5s ease;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#open-check:checked+ .envelope .flap{
+    transform: rotateX(180deg);
+    z-index: 0;
+}
+#open-check:checked+ .envelope .letter{
+    transform: translateY(-130px);
+    z-index: 5;
+}
+.heart-seal{
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    z-index: 4;
+    transition: opacity 0.3s ease;
+}
+#open-check:checked+ .envelope .heart-seal{
+    opacity: 0;
+}
+.hint{
+    position: absolute;
+    top: 125%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    margin-top: -100px;
+    font-family: 'Arial', sans-serif;
+    color: rgb(255, 0, 43);
+    font-weight: bold;
+    pointer-events: none;
+    white-space: nowrap;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    animation: bounce 2s infinite;
+}
+@keyframes bounce{
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);}
+    40%{transform: translateY(-10px);}
+    60%{transform: translateY(-5px);}
+}
+#open-check:checked~ .envelope .hint{
+    display: none;
+}
+.musicplayer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 30px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ffb3c1;
+}
+.albumartcontainer{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+
+}
+.playing .cat-img{
+    animation: slowSpin 10s linear infinite;
+}
+@keyframes slowSpin{
+    from{
+        transform: rotate(0deg);}
+        to{transform: rotate(360deg);}
+}
+.progresscontainer{
+    background: #eee;
+    height: 6px;
+    width: 100px;
+    border-radius: 10px;
+    margin: 16px;
+    cursor: pointer;
+    position: relative;
+}
+.progressbar{
+    background: #ff4d6d;
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    transition: width 0.1s linear;
+
+}
+.playbtn{
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.playbtn:active{
+    transform: scale(0.9);}
+
+.letter-text ul{
+    padding-left: 20px;
+    list-style-type: none;
+
+}
+.letter-text li{
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.4;
+    color:rgb(31, 29, 29);
+}
+.letter-text li::before{
+    content: "❤";
+    position: absolute;
+    left: -25px;
+    font-size: 12px;
+}
+</style>
+
+</head>
+
+<body>
+    <h2>I LOVE YOU</h2>
+<div class="main-container">
+<div class="musicplayer">
+    <div class="albumartcontainer">
+        <img src="images (14).jpeg" alt="Hugging Cats" class="cat-img">
+    </div>
+    <div class="songinfo">
+        <p class="songtitle">Enjoy baby</p>
+        <p class="artistname">Turn up your volume</p>
+    </div>
+<div class="progresscontainer" id="progresscontainer">
+    <div class="progressbar" id="progressbar"></div>
+</div>
+<div class="controls">
+<button id="playbtn" class="playbtn">Press to play🎶</button></div></div>
+
+<audio id="mysong"> <source src="audio.mp3" type="audio/mpeg"></audio>
+</div>
+<div class="envelope-wrapper" onclick="">
+    <input id="open-check" type="checkbox">
+    <label class="envelope" for="open-check">
+        <div class="flap">
+            <div class="heart-seal">💖</div></div>
+        <div class="body"></div>
+        <div class="hint">Click to open✨</div>
+        <div class="letter">
+            <div class="letter-text">
+                <h3>Benson,</h3>
+                <ul>
+                    <li>I cant say I'm the happiest person on earth,but I can say I'm the luckiest.</li>
+                    <li>I thank God every single day for letting us find each other. I could have ended up with any other person on the planet but God chose you.</li>
+                    <li>Its sad we cant be together on valentines so I made you this to remember and think about me.</li>
+                    <li>I hope you like it. Mwaaah💋.</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </label>
+</div>
+<script>
+    const audio =document.getElementById('mysong');
+    const playbtn =document.getElementById('playbtn');
+    const progressbar=document.getElementById('progressbar');
+    const progresscontainer=document.getElementById('progresscontainer');
+    const checkbox=document.getElementById('open-check');
+
+    checkbox.addEventListener('change',function(){
+        if(this.checked){
+            audio.play();
+            playbtn.innerText="Pause⏸"
+        }
+    });
+
+    playbtn.addEventListener('click',()=>{
+        const musicCard=document.querySelector('.musicplayer');
+    if(audio.paused){
+        audio.play();
+        playbtn.innerText="Pause⏸";
+        musicCard.classList.add('playing');
+    }else{
+        audio.pause();
+        playbtn.innerText="Press to play▶";
+        musicCard.classList.remove('playing');
+    }
+});
+audio.addEventListener('timeupdate',()=>{
+    const percent=(audio.currentTime/audio.duration)*100;
+    progressbar.style.width=percent+'%'
+});
+progresscontainer.addEventListener('click',(e)=>{
+    const width=progresscontainer.clientWidth;
+    const clickX=e.offsetX;
+    const duration=audio.duration;
+    audio.currentTime=(clickX/width)*duration;
+});
+</script>
+</body>
+</html>
